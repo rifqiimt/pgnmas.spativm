@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Menu, X, ArrowRight, Instagram, Twitter, Mail, ChevronDown, CheckCircle2 } from 'lucide-react';
+import { Menu, X, ArrowRight, Instagram, Twitter, Mail, ChevronDown, CheckCircle2, Facebook } from 'lucide-react';
 
 // --- 1. Komponen Logo Spativm (Image) ---
 const SpativmLogo = ({ className = "w-full h-full" }) => (
@@ -132,14 +132,14 @@ const SpativmPage = () => {
       title: "Building Maintenance",
       category: "Perawatan Gedung & Fasilitas",
       description: "Pemeriksaan rutin, perbaikan ringan, hingga pemeliharaan sistem utilitas (listrik, air, AC).",
-      image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=2000"
+      image: "https://pgnmas.co.id/assets/images/facilitymanagement/1.JPG"
     },
     {
       id: 2,
       title: "Housekeeping & Hygiene",
       category: "Kebersihan & Sanitasi",
       description: "Pengelolaan kebersihan menyeluruh untuk menciptakan lingkungan kerja yang sehat dan nyaman.",
-      image: "https://images.unsplash.com/photo-1584622024886-98c740a815cb?auto=format&fit=crop&q=80&w=2000"
+      image: "https://pgnmas.co.id/assets/images/facilitymanagement/3.JPG"
     },
     {
       id: 3,
@@ -153,24 +153,24 @@ const SpativmPage = () => {
       title: "Office Support",
       category: "Layanan Pendukung",
       description: "Resepsionis, operator telepon, tata usaha umum, hingga pengelolaan ruang meeting & coworking.",
-      image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=2000"
+      image: "https://pgnmas.co.id/assets/images/facilitymanagement/4.JPG"
     }
   ];
 
   // Data Clients dengan Logo
   const clients = [
-    { name: "Kementerian BUMN", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_Kementerian_BUMN_2020.svg/320px-Logo_Kementerian_BUMN_2020.svg.png" },
-    { name: "SKK Migas", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Logo_SKK_Migas.svg/320px-Logo_SKK_Migas.svg.png" },
-    { name: "Pertamina", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Pertamina_Logo.svg/320px-Pertamina_Logo.svg.png" },
-    { name: "PGN Group", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PGN_logo.svg/320px-PGN_logo.svg.png" },
-    { name: "Pertamina EP", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Logo_Pertamina_EP.svg/320px-Logo_Pertamina_EP.svg.png" },
-    { name: "BULOG", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Logo_Bulog.png/320px-Logo_Bulog.png" },
+    { name: "Kementerian BUMN", logo: "kemenbumn.png"},
+    { name: "SKK Migas", logo: "skk.png" },
+    { name: "Pertamina", logo: "pertamina.png" },
+    { name: "PGN Group", logo: "https://e7.pngegg.com/pngimages/674/919/png-clipart-pt-perusahaan-gas-negara-tbk-pertamina-natural-gas-joint-company-negara-blue-text-thumbnail.png" },
+    { name: "Pertamina EP", logo: "ep.png" },
+    { name: "BULOG", logo: "https://logowik.com/content/uploads/images/bulog-202463310.logowik.com.webp" },
     { name: "Bank Mega", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Bank_Mega_2013.svg/320px-Bank_Mega_2013.svg.png" },
-    { name: "ASDP", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Logo_ASDP.png/320px-Logo_ASDP.png" },
-    { name: "Medco E&P", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/MedcoEnergi_Logo.svg/320px-MedcoEnergi_Logo.svg.png" },
-    { name: "Pertamina Hulu Energi", logo: null }, 
-    { name: "Pertagas", logo: null },
-    { name: "Saka Indonesia", logo: null },
+    { name: "ASDP", logo: "asdp.svg" },
+    { name: "Medco E&P", logo: "https://upload.wikimedia.org/wikipedia/commons/d/d8/Logo_MedcoEnergi.png" },
+    { name: "Pertamina Hulu Energi", logo: "energi.png" }, 
+    { name: "Pertagas", logo: "pertagas.png" },
+    { name: "Saka Indonesia", logo: "https://lh6.googleusercontent.com/proxy/hySUaqshZuhxUBlBBMFulbiwc--1Z06TME42Y6m_U1AfIy3RIavUps0jqhjiX0xkRyFpwg5Lo1aaYvpy2wv_MhqIdXO2-gAF39Cj4udi8-mW5syb4_OuUfYA-Do-cNPR2mTZDTYP5Sgc3w9X" },
   ];
 
   return (
@@ -240,11 +240,11 @@ const SpativmPage = () => {
         
         <FadeInSection className="relative z-10 text-center text-white px-6 max-w-5xl mx-auto">
           <span className="inline-block mb-4 text-xs md:text-sm tracking-[0.3em] uppercase opacity-90 text-cyan-400 font-bold">
-            Integrated Facility & Safety Management
+            Regional Building Management Services and Office Facilities
           </span>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-6 leading-tight drop-shadow-lg">
-            OPTIMAL<br/>
-            <span className="italic font-light text-slate-200">PERFORMANCE</span>
+            SIMPLIFY THE<br/>
+            <span className="italic font-light text-slate-200">COMPLICATED ONE</span>
           </h1>
           <p className="max-w-lg mx-auto text-base md:text-lg text-slate-200 font-light leading-relaxed mb-10">
             Memastikan gedung Anda beroperasi dengan aman, terjaga, dan prima. 
@@ -275,7 +275,7 @@ const SpativmPage = () => {
             <div className="bg-slate-50 p-6 border-l-4 border-[#005494] shadow-lg rounded-r-xl">
                 <h3 className="text-base font-bold uppercase tracking-widest mb-4 text-[#1F2A44]">Tim Ahli Kami</h3>
                 <ul className="grid grid-cols-2 gap-y-3 gap-x-4 text-xs md:text-sm text-slate-700 font-medium">
-                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-cyan-500 rounded-full"></div>Tenant Relation</li>
+                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-cyan-500 rounded-full"></div>Tenant Relation Officer</li>
                     <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-cyan-500 rounded-full"></div>Teknisi (ME & Sipil)</li>
                     <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-cyan-500 rounded-full"></div>Housekeeper</li>
                     <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-cyan-500 rounded-full"></div>Petugas Keamanan</li>
@@ -324,9 +324,6 @@ const SpativmPage = () => {
                     alt={service.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-[#005494]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                    <span className="text-white border border-white px-5 py-2 uppercase tracking-widest text-xs font-bold">Lihat Detail</span>
-                  </div>
                 </div>
                 <div className="flex flex-col border-b border-slate-200 pb-4 group-hover:border-cyan-500 transition-colors">
                   <div className="flex justify-between items-start mb-2">
@@ -505,8 +502,8 @@ const SpativmPage = () => {
                 <a href="https://www.instagram.com/spativm.id/" className="p-2.5 bg-slate-50 rounded-full hover:bg-cyan-50 hover:text-cyan-600 transition-colors">
                   <Instagram size={16} className="text-slate-700" />
                 </a>
-                <a href="#" className="p-2.5 bg-slate-50 rounded-full hover:bg-cyan-50 hover:text-cyan-600 transition-colors">
-                  <Twitter size={16} className="text-slate-700" />
+                <a href="https://www.facebook.com/spativm.id/" className="p-2.5 bg-slate-50 rounded-full hover:bg-cyan-50 hover:text-cyan-600 transition-colors">
+                  <Facebook size={16} className="text-slate-700" />
                 </a>
                 <a href="mailto:commercial@pgnmas.co.id" className="p-2.5 bg-slate-50 rounded-full hover:bg-cyan-50 hover:text-cyan-600 transition-colors">
                   <Mail size={16} className="text-slate-700" />

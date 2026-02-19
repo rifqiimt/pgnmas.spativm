@@ -42,10 +42,8 @@ const CountUp = ({ end, duration = 1500, suffix = "", decimals = 0, isVisible, d
       timeoutId = setTimeout(() => {
         animationFrame = requestAnimationFrame(animate);
       }, delay);
-    } else {
-      // Reset ke 0 saat keluar layar (fade out)
-      setCount(0);
     }
+    // Else block dihapus agar tidak reset ke 0
 
     return () => {
       clearTimeout(timeoutId);
@@ -61,7 +59,7 @@ const CountUp = ({ end, duration = 1500, suffix = "", decimals = 0, isVisible, d
   );
 };
 
-// --- Komponen Animasi Fade In Up (Updated) ---
+// --- Komponen Animasi Fade In Up (Updated: Trigger Once) ---
 const FadeInSection = ({ children, delay = 0, className = "" }) => {
   const [isVisible, setVisible] = useState(false);
   const domRef = useRef();
@@ -69,8 +67,12 @@ const FadeInSection = ({ children, delay = 0, className = "" }) => {
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        // Logika Reset: Animasi ulang saat keluar masuk viewport
-        setVisible(entry.isIntersecting);
+        // Jika elemen masuk viewport
+        if (entry.isIntersecting) {
+          setVisible(true);
+          // PENTING: Stop observe setelah terlihat pertama kali agar animasi tidak berulang
+          if (domRef.current) observer.unobserve(domRef.current);
+        }
       });
     }, { 
       threshold: 0.15,
@@ -81,7 +83,8 @@ const FadeInSection = ({ children, delay = 0, className = "" }) => {
     if (current) observer.observe(current);
 
     return () => {
-      if (current) observer.unobserve(current);
+      // Cleanup safety
+      if (current) observer.disconnect();
     };
   }, []);
 
@@ -186,7 +189,7 @@ const SpativmPage = () => {
           {/* Logo Section */}
           <div className="flex items-center gap-3 cursor-pointer z-50 group" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
              <div className={`w-14 h-12 relative transition-all duration-500 group-hover:scale-105 flex items-center justify-center 
-                ${!scrolled ? 'bg-white/95 p-2 rounded-xl shadow-lg backdrop-blur-sm' : ''} 
+                ${!scrolled ? 'brightness-0 invert' : ''} 
              `}>
                 <SpativmLogo />
              </div>
@@ -235,7 +238,6 @@ const SpativmPage = () => {
             className="w-full h-full object-cover transform scale-105 animate-[pulse_10s_ease-in-out_infinite]"
           />
           <div className="absolute inset-0 bg-[#0f172a]/70"></div>
-          <div className="absolute inset-0 bg-gradient-to-tr from-[#005494]/40 to-transparent"></div>
         </div>
         
         <FadeInSection className="relative z-10 text-center text-white px-6 max-w-5xl mx-auto">
